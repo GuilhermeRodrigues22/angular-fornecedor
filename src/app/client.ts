@@ -6,4 +6,5 @@ export interface Client
   email: string;
   cpf: number;
   cidade: string;
+  payment: string;
 }

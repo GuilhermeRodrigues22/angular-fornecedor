@@ -7,27 +7,63 @@
 <div class="row">
   <div class="col-8 m-auto">
 
-      <form [formGroup]="FormGroupSupplier">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nome:</label>
-          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Insira seu Nome">
+    <form [formGroup]="FormGroupSupplier">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome:</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Insira seu Nome">
+        <div *ngIf="submitted && name.invalid">
+          <small class="text-danger">Nome Inválido!</small>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email:</label>
-          <input type="email" formControlName="email" class="form-control" id="email" placeholder="Insira se Email">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Insira se Email">
+        <div *ngIf="submitted && email.invalid">
+          <small class="text-danger">E-mail Inválido!</small>
         </div>
-        <div class="mb-3">
-          <label for="telefone" class="form-label">Telefone:</label>
-          <input type="number" formControlName="telefone" class="form-control" id="telefone" placeholder="Insira seu Telefone">
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone:</label>
+        <input type="number" formControlName="telefone" class="form-control" id="telefone"
+          placeholder="Insira seu Telefone">
+        <div *ngIf="submitted && telefone.invalid">
+          <small class="text-danger">Telefone Inválido!</small>
         </div>
-        <div class="mb-3">
-          <label for="cnpj" class="form-label">CNPJ:</label>
-          <input type="number" formControlName="cnpj" class="form-control" id="cnpj" placeholder="Informe seu CNPJ">
+      </div>
+      <div class="mb-3">
+        <label for="cnpj" class="form-label">CNPJ:</label>
+        <input type="number" formControlName="cnpj" class="form-control" id="cnpj" placeholder="Informe seu CNPJ">
+        <div *ngIf="submitted && cnpj.invalid">
+          <small class="text-danger">CNPJ Inválido!</small>
         </div>
-        <div class="mb-3">
-          <label for="produto" class="form-label">Produto:</label>
-          <input type="text" formControlName="produto" class="form-control" id="cidade" placeholder="Informe seu Produto">
+      </div>
+      <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria:</label>
+        <select formControlName="categoria" class="form-control" id="categoria">
+          <option value="" disabled>Escolha a sua Categoria:</option>
+          <option value="Roupas">Roupas</option>
+          <option value="Colecionavel">Colecionável</option>
+          <option value="Jogos">Jogos</option>
+          <option value="Instrumento">Instrumento</option>
+          <option value="Eletronico">Eletrônico</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="produto" class="form-label">Produto:</label>
+        <input type="text" formControlName="produto" class="form-control" id="produto"
+          placeholder="Informe seu Produto">
+        <div *ngIf="submitted && produto.invalid">
+          <small class="text-danger">Produto Inválido!</small>
         </div>
+      </div>
+      <div class="mb-3">
+        <div class="d-flex flex-nowrap gap-2"> <label class="form-check-label">Li e aceito os termos de serviço:</label>
+          <div class="form-check"> <input type="checkbox" formControlName="isAcceptedTerms" class="form-check-input">
+          </div>
+          <div *ngIf="submitted && accTerms.invalid"> <small class="text-danger">Aceite os termos!</small> </div>
+        </div>
+      </div>
 
       <div class="mb-3 d-flex justify-content-end">
         <button class="btn btn-primary" (click)="save()">Salvar</button>
@@ -45,6 +81,7 @@
       <th scope="col">Email</th>
       <th scope="col">Telefone</th>
       <th scope="col">CNPJ</th>
+      <th scope="col">Categoria</th>
       <th scope="col">Produto</th>
       <th scope="col">Opções</th>
     </tr>
@@ -56,6 +93,7 @@
       <td>{{supplier.email}}</td>
       <td>{{supplier.telefone}}</td>
       <td>{{supplier.cnpj}}</td>
+      <td>{{supplier.categoria}}</td>
       <td>{{supplier.produto}}</td>
       <td>
         <button class="btn btn-warning me-1" (click)="edit(supplier)">Editar</button>

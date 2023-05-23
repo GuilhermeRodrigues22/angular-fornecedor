@@ -2,21 +2,62 @@
   "clients": [
     {
       "id": 1,
+      "name": "Carlos",
+      "email": "carlos@gmail.com",
+      "telefone": 1193232332,
+      "cpf": 123131313,
+      "cidade": "Itu",
+      "payment": "Cartão de Crédito/Débito"
+    },
+    {
+      "id": 2,
+      "name": "Marcio",
+      "email": "Marcio@gmail.com",
+      "telefone": 119323232,
+      "cpf": 32323232,
+      "cidade": "Sorocaba",
+      "payment": "Pix"
+    },
+    {
+      "id": 3,
       "name": "Guilherme",
-      "email": "gui@gmail.com",
-      "telefone": 323232323232,
-      "cpf": 5454545454,
-      "cidade": "Itu"
+      "email": "guilherme@gmail.com",
+      "telefone": 119345676565,
+      "cpf": 233323323232,
+      "cidade": "Indaiatuba",
+      "payment": "Dinheiro"
     }
   ],
   "suppliers": [
     {
       "id": 1,
-      "name": "carlos",
+      "name": "Carlos",
       "email": "carlos@gmail.com",
-      "telefone": "11923214332",
-      "cnpj": "5454545454",
-      "produto": "Itu"
+      "telefone": 119323232,
+      "cnpj": 23232323,
+      "categoria": "Instrumento",
+      "produto": "bateria",
+      "isAcceptedTerms": true
+    },
+    {
+      "id": 2,
+      "name": "Sandra",
+      "email": "sandrinha@gmail.com",
+      "telefone": 11923323232,
+      "cnpj": 232232323,
+      "categoria": "Eletronico",
+      "produto": "Tv Samsung 4k",
+      "isAcceptedTerms": true
+    },
+    {
+      "id": 3,
+      "name": "Renata",
+      "email": "renata@gmail.com",
+      "telefone": 119322323232,
+      "cnpj": 33643764736473,
+      "categoria": "Colecionavel",
+      "produto": "Funko pop",
+      "isAcceptedTerms": true
     }
   ]
 }
