@@ -1,0 +1,22 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Guilherme",
+      "email": "gui@gmail.com",
+      "telefone": 323232323232,
+      "cpf": 5454545454,
+      "cidade": "Itu"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "carlos",
+      "email": "carlos@gmail.com",
+      "telefone": "11923214332",
+      "cnpj": "5454545454",
+      "produto": "Itu"
+    }
+  ]
+}

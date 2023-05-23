@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-8 m-auto">
+    <form [formGroup]="formGroupClient">
+      <div class="mb-3">
+        <div class="display-6 text-center">
+          Cadastro de Clientes
+        </div>
+        <label for="name" class="form-label">Nome:</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Insira seu Nome">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Insira se Email">
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone:</label>
+        <input type="number" formControlName="telefone" class="form-control" id="telefone" placeholder="Insira seu Telefone">
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF:</label>
+        <input type="number" formControlName="cpf" class="form-control" id="cpf" placeholder="Insira seu CPF">
+      </div>
+      <div class="mb-3">
+        <label for="cidade" class="form-label">Cidade:</label>
+        <input type="text" formControlName="cidade" class="form-control" id="cidade" placeholder="Informe sua Cidade">
+      </div>
+
+    <div class="mb-3 d-flex justify-content-end">
+      <button class="btn btn-primary" (click)="save()">Salvar</button>
+      <button class="btn btn-danger" (click)="FormReset()">Limpar</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <th scope="row">{{client.id}}</th>
+      <td>{{client.name}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.telefone}}</td>
+      <td>{{client.cpf}}</td>
+      <td>{{client.cidade}}</td>
+      <td>
+        <button class="btn btn-warning me-1" (click)="edit(client)">Editar</button>
+        <button class="btn btn-info" (click)="delete(client)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
